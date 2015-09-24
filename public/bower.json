@@ -1,0 +1,21 @@
+{
+  "name": "Tutor-Lab-Queue",
+  "version": "0.1.0",
+  "homepage": "https://github.com/sessamekesh/Tutor-Lab-Queue",
+  "authors": [
+    "Kamaron Peterson <kamaron.peterson@aggiemail.usu.edu>"
+  ],
+  "description": "Queue used for the tutor lab at USU",
+  "main": "bin/www",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.1.0"
+  }
+}
