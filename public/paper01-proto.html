@@ -1,0 +1,43 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/paper-header-panel/paper-header-panel.html">
+<link rel="import" href="/bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="/bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="/bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="/bower_components/iron-pages/iron-pages.html">
+
+<dom-module id="tutor-queue-view">
+
+	<template>
+		<paper-header-panel class="flex">
+			<paper-toolbar class="medium-tall">
+				<div>USU Tutor Lab Queue</div>
+				<span class="flex"></span>
+				<paper-tabs class="bottom fit" selected="{{selectedPage}}">
+					<paper-tab>Get Help</paper-tab>
+					<paper-tab>View Queue</paper-tab>
+					<paper-tab>Sign In/Out</paper-tab>
+				</paper-tabs>
+			</paper-toolbar>
+		</paper-header-panel>
+		<iron-pages selected="{{selectedPage}}">
+			<div>Page 1</div>
+			<div>Page 2</div>
+			<div>Page 3</div>
+		</iron-pages>
+	</template>
+
+	<script>
+		Polymer({
+			is: 'tutor-queue-view',
+			properties: {
+				selectedPage: {
+					type: String,
+					value: "0"
+				}
+			}
+		});
+	</script>
+
+</dom-module>
