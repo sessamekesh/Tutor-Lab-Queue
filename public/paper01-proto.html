@@ -6,6 +6,12 @@
 <link rel="import" href="/bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="/bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="/bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="/bower_components/iron-form/iron-form.html">
+<link rel="import" href="/bower_components/paper-input/paper-input.html">
+<link rel="import" href="/bower_components/paper-button/paper-button.html">
+<link rel="import" href="/bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="/bower_components/paper-item/paper-item.html">
+<link rel="import" href="/bower_components/paper-menu/paper-menu.html">
 
 <dom-module id="tutor-queue-view">
 
@@ -22,8 +28,24 @@
 			</paper-toolbar>
 		</paper-header-panel>
 		<iron-pages selected="{{selectedPage}}">
-			<div>Page 1</div>
+			<!-- Add -->
+			<div>
+				<form is="iron-form" id="help-form" method="post" action="/help">
+					<paper-dropdown-menu label="Name">
+						<paper-menu class="dropdown-content">
+							<paper-item>Kamaron</paper-item>
+							<paper-item>Sam</paper-item>
+							<paper-item>Something</paper-item>
+						</paper-menu>
+					</paper-dropdown-menu>
+					<paper-input name="className" label="Class (and professor)" required=""></paper-input>
+					<paper-input name="topic" label="Topic (optional)"></paper-input>
+					<paper-button raised onclick="submitForm()">Submit</paper-button>
+				</form>
+			</div>
+			<!-- View Queue -->
 			<div>Page 2</div>
+			<!-- Sign In/Out -->
 			<div>Page 3</div>
 		</iron-pages>
 	</template>
@@ -38,6 +60,12 @@
 				}
 			}
 		});
+
+		// Other functions...
+		function submitForm() {
+			// TODO KAM: Submit like this?
+			document.getElementById('help-form').submit();
+		}
 	</script>
 
 </dom-module>
