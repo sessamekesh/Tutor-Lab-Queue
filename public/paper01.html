@@ -2,8 +2,19 @@
 <html>
 	<head>
 		<link rel="import" href="/paper01-proto.html">
+		<script>
+		function onLoaded() {
+			document.getElementById('help-form').addEventListener('iron-form-error', function (e) {
+				console.log('Form error:', e);
+			});
+			document.getElementById('help-form').addEventListener('iron-form-response', function (e) {
+				console.log('Response:', e);
+				window.location = window.location;
+			});
+		}
+		</script>
 	</head>
-	<body class="fullbleed vertical layout">
+	<body class="fullbleed vertical layout" onload="onLoaded()">
 		<!-- paper-header-panel must have an explicit height -->
 		<tutor-queue-view></tutor-queue-view>
 	</body>
