@@ -1,0 +1,40 @@
+extends template
+
+block content
+  if properties.requestMade
+    .alert.alert-success
+      p Request successfully made
+  form.form-horizontal(method="post" action="/")
+    fieldset
+      // Form Name
+      legend Request Help
+
+      // Student name (text input)
+      .form-group
+        label.col-md-4.control-label(for="studentName") Name
+        .col-md-4
+          input.form-control.input-md#studentName(name="studentName" type="text" placeholder="Bobby Tables" required="")
+
+      // Student course (text input)
+      .form-group
+        label.col-md-4.control-label(for="course") Course
+        .col-md-4
+          input#course.form-control.input-md(name="course" type="text" placeholder="CS 1400" required="")
+
+      // Professor name (text input)
+      .form-group
+        label.col-md-4.control-label(for="professor") Professor
+        .col-md-4
+          input#professor.form-control.input-md(name="professor" type="text" placeholder="(optional)")
+
+      // Extra notes
+      .form-group
+        label.col-md-4.control-label(for="notes") Extra Notes
+        .col-md-4
+          input#notes.form-control.input-md(name="notes" type="text" placeholder="(optional)")
+
+      // Submit button
+      .form-group
+        label.col-md-4.control-label(for="submit")
+        .col-md-4
+          input.btn.btn-primary(type="submit" name="submit" value="Submit")
